@@ -1,8 +1,16 @@
 import React from 'react'
+import Footer from './components/Footer';
+import Header from './components/Header';
+import HomeScreen from './screens/HomeScreen';
+
 const App = () => {
   return (
     <>
-      <h1>Welcome to wake</h1>
+      <Header />
+      <main className='py-3'>
+        <HomeScreen />
+      </main>
+      <Footer />
     </>
   );
 }
