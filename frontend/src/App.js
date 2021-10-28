@@ -1,17 +1,21 @@
 import React from 'react'
-import Footer from './components/Footer';
-import Header from './components/Header';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import GroupScreen from './screens/GroupScreen';
 import HomeScreen from './screens/HomeScreen';
+import ModeSelectScreen from './screens/ModeSelectScreen';
+import PrivateScreen from './screens/PrivateScreen';
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <main className='py-3'>
-        <HomeScreen />
+    <Router >
+      <main className='background'>
+        <Route path='/' component={HomeScreen} exact />
+        <Route path='/mode' component={ModeSelectScreen} />
+        <Route path='/private' component={PrivateScreen} />
+        <Route path='/group' component={GroupScreen} />
       </main>
-      <Footer />
-    </>
+    </Router>
+
   );
 }
 
