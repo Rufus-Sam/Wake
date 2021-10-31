@@ -9,7 +9,7 @@ const modeReducer = (state = initialState, action) => {
         case MODE_SET_USERNAME:
             return {
                 ...state,
-                username: action.data.username
+                username: action.data
             }
         default:
             return state
