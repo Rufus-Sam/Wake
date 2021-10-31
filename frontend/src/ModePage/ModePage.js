@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PrivateScreen = () => {
+const ModePage = () => {
     return (
         <div>
-
+            Mode
         </div>
     )
 }
 
-export default PrivateScreen
+export default ModePage

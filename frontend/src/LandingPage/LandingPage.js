@@ -1,11 +1,11 @@
 import React from 'react'
 
-const GroupScreen = () => {
+const LandingPage = () => {
     return (
         <div>
-
+            Landing
         </div>
     )
 }
 
-export default GroupScreen
+export default LandingPage
