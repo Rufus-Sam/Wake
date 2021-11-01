@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { setUsername } from '../actions/modeActions'
 import UsernameInput from '../components/UsernameInput'
+import { connectWithWebSocket, registerNewUser } from '../utils/wssConnection/wssConnection'
 
 const ModePage = ({ history, saveUsername }) => {
     const [username, setUsername] = useState('')
 
+    useEffect(() => {
+        connectWithWebSocket()
+    }, [])
+
     const groupSubmit = () => {
-        history.push('/group')
+        registerNewUser(username)
         saveUsername(username)
+        history.push('/group')
     }
     const privateSubmit = () => {
-        history.push('/private')
+        registerNewUser(username)
         saveUsername(username)
+        history.push('/private')
     }
     return (
         <div>

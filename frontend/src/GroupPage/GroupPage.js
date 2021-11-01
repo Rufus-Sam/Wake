@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Form, Button } from 'react-bootstrap'
-import { connectWithWebSocket } from '../utils/wssConnection/wssConnection'
+import ActiveUsersList from '../components/ActiveUsersList'
 
 const GroupPage = ({ history }) => {
 
     const rooms = useSelector((state) => state.rooms)
     const [roomId, setRoomId] = useState('')
 
-    useEffect(() => {
-        connectWithWebSocket()
-    }, [])
     const createRoomSubmit = () => {
 
     }
@@ -23,6 +20,7 @@ const GroupPage = ({ history }) => {
             history.push('/group')
         }
     }
+
     return (
         <div>
             Group
@@ -34,8 +32,9 @@ const GroupPage = ({ history }) => {
                         (e) => setRoomId(e.target.value)}>
                     </Form.Control>
                 </Form.Group>
-                <Button type='submit' variant='primary'></Button>
+                <Button type='submit' variant='primary'>Join Room</Button>
             </Form>
+            <ActiveUsersList />
         </div>
     )
 }

@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
-import { connectWithWebSocket } from '../utils/wssConnection/wssConnection'
+import React from 'react'
+import ActiveUsersList from '../components/ActiveUsersList'
 
 const PrivatePage = () => {
-    useEffect(() => {
-        connectWithWebSocket()
-    }, [])
+
     return (
         <div>
             Private
+            <ActiveUsersList />
         </div>
     )
 }
